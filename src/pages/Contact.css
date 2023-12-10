@@ -1,0 +1,40 @@
+/* pages/Contact/contact.css */
+
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form label {
+    margin-bottom: 8px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 16px;
+  }
+  
+  .contact-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .contact-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 8px;
+  }
+  

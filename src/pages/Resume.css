@@ -1,0 +1,33 @@
+/* pages/Resume/resume.css */
+
+.resume-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .resume-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .resume-link:hover {
+    text-decoration: underline;
+  }
+  
+  .proficiencies {
+    margin-top: 20px;
+  }
+  
+  .proficiency-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .proficiency-list li {
+    margin-bottom: 8px;
+  }
+  
+  

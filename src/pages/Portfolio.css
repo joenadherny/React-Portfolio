@@ -1,0 +1,36 @@
+/* pages/Portfolio/portfolio.css */
+
+.portfolio-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .project {
+    margin-bottom: 20px;
+  }
+  
+  .project-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .project-description {
+    line-height: 1.6;
+  }
+  
+  .project-links {
+    margin-top: 8px;
+  }
+  
+  .project-links a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .project-links a:hover {
+    text-decoration: underline;
+  }
+  
