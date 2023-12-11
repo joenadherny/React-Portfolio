@@ -1,6 +1,6 @@
 // pages/Portfolio/Portfolio.jsx
 import React from 'react';
-import './portfolio.css';
+import './Portfolio.css';
 
 const Portfolio = () => {
   const projects = [

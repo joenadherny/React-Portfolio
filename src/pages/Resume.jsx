@@ -1,6 +1,6 @@
 // pages/Resume/Resume.jsx
 import React from 'react';
-import './resume.css';
+import './Resume.css';
 
 const Resume = () => {
   const proficiencies = [
