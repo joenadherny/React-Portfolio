@@ -1,22 +1,22 @@
-import ReactRefreshPlugin from '@vitejs/plugin-react-refresh';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons';
 
-export default {
-    plugins: [
-      ReactRefreshPlugin(),
-      ViteIcons(),
-    ],
-    resolve: {
-      alias: {
-        '@': '/src',
-      },
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react(), ViteIcons()],
+  resolve: {
+    alias: {
+      '@': '/src',
     },
-    server: {
-      open: '/',
-      port: 3000,
-    },
-    build: {
-      outDir: 'dist',
-    },
-  };
+  },
+  server: {
+    port: 3000,
+    open: true,
+  },
+  build: {
+    outDir: 'dist',
+  },
+});
+
   
