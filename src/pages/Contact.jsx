@@ -1,6 +1,6 @@
-// pages/Contact/Contact.jsx
+// src/components/Contact.jsx
 import React, { useState } from 'react';
-import './contact.css';
+import './Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,73 +9,88 @@ const Contact = () => {
     message: '',
   });
 
-  const [errors, setErrors] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const [emailError, setEmailError] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: '' });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    
+    // Clear email error when the user starts typing
+    if (name === 'email') {
+      setEmailError('');
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
 
-    // Example: Validate the form fields
-    if (!formData.name.trim()) {
-      setErrors({ ...errors, name: 'Name is required' });
+    // Validate email
+    if (!isValidEmail(formData.email)) {
+      setEmailError('Please enter a valid email address.');
       return;
     }
 
-    if (!formData.email.trim()) {
-      setErrors({ ...errors, email: 'Email is required' });
-      return;
-    }
-
-    // Add more validation as needed
-
-    // Example: Log the form data
     console.log('Form submitted:', formData);
+    setSubmitted(true);
+    setFormData({ name: '', email: '', message: '' });
+  };
+
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   return (
     <div className="contact-container">
-      <h2>Contact</h2>
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-        {errors.name && <p className="error-message">{errors.name}</p>}
-
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        {errors.email && <p className="error-message">{errors.email}</p>}
-
-        <label htmlFor="message">Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-        />
-        {errors.message && <p className="error-message">{errors.message}</p>}
-
-        <button type="submit">Submit</button>
-      </form>
+      <h2>Contact Us</h2>
+      {!submitted ? (
+        <form onSubmit={handleSubmit} className="contact-form">
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+            {emailError && <p className="error-message">{emailError}</p>}
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" className="submit-button">
+            Submit
+          </button>
+        </form>
+      ) : (
+        <div className="thank-you-message">
+          <p>
+            Thank you!
+          </p>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 // pages/AboutMe/AboutMe.jsx
 import React from 'react';
-import aboutMeImage from '../../public/aboutme-image.jpg'; // Replace with your actual image path
-import './aboutme.css';
+
+import './AboutMe.css';
 
 const AboutMe = () => {
   return (
@@ -9,7 +9,7 @@ const AboutMe = () => {
       <h2>About Me</h2>
       <img src={aboutMeImage} alt="Developer Avatar" className="about-me-image" />
       <p className="about-me-bio">
-        Insert your short bio text here. Talk about your interests, skills, and a brief overview of your background.
+        My name is Joe Nadherrny and I have just started my career path into coding. Below are some of the projects I have worked on over the past months in my Full Stack Web Development bootcamp I am finishing up. 
       </p>
     </div>
   );
