@@ -1,24 +1,17 @@
-// components/Navbar/Navbar.jsx
+// src/components/Navbar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './navbar.css';
+import './Navbar.css'; // Import your CSS file
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul className="nav-links">
-        <li>
-          <Link to="/about">About Me</Link>
-        </li>
-        <li>
-          <Link to="/portfolio">Portfolio</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-        <li>
-          <Link to="/resume">Resume</Link>
-        </li>
+    <nav className="navbar-container">
+      <Link to="/" className="navbar-logo">Blake Boiteux</Link>
+      <ul className="navbar-list">
+        <li className="navbar-item"><Link to="/about">About</Link></li>
+        <li className="navbar-item"><Link to="/resume">Resume</Link></li>
+        <li className="navbar-item"><Link to="/portfolio">Portfolio</Link></li>
+        <li className="navbar-item"><Link to="/contact">Contact</Link></li>
       </ul>
     </nav>
   );

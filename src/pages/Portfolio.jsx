@@ -5,18 +5,32 @@ import './portfolio.css';
 const Portfolio = () => {
   const projects = [
     {
-      title: 'Project 1',
-      description: 'Description of Project 1.',
+      title: 'CSS Portfolio',
+      imageSrc: "src/assets/Screenshot1.png",
       deployedLink: 'https://example.com/project1',
       githubLink: 'https://github.com/example/project1',
     },
     {
-      title: 'Project 2',
-      description: 'Description of Project 2.',
+      title: 'SVG Logo Maker',
+      imageSrc: "src/assets/Screenshot2.png",
       deployedLink: 'https://example.com/project2',
       githubLink: 'https://github.com/example/project2',
     },
-    // Add more projects as needed
+    {
+        title: 'Password Generator',
+        imageSrc: "src/assets/Screenshot4.png",
+        deployedLink: 'https://example.com/project2',
+        githubLink: 'https://github.com/example/project2',
+      },
+      {
+        title: 'Note Taker',
+        imageSrc: "src/assets/Screenshot3.png",
+        deployedLink: 'https://example.com/project2',
+        githubLink: 'https://github.com/example/project2',
+      },
+      
+
+   
   ];
 
   return (
