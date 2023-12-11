@@ -34,3 +34,6 @@ THEN I am presented with text or icon links to the developer’s GitHub and Link
 
 # Links
 https://github.com/joenadherny/React-Portfolio 
+https://react-portfolio-joenadherny.netlify.app/ 
+
+I do not have any other accounts so I did not link a third account.
